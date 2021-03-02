@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reconhecimento de VOZ</title>
+  
+  <link rel="icon" href="img/IA.jpeg" />
+  <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+<body>
+  
+  <!--Ao falar-->
+  <div id="transcription"></div>
+  
+  <!--Mostrar data e hora-->
+  <div class="mostrar"></div>   
+  <!--<span id="unsupported" class="hidden">API not supported</span>-->
+  
+  <!--Animaçaõ simples-->
+  <div class="des">
+    <div></div>
+    <div></div>
+    
+    <div></div>
+    <div></div>
+    
+    
+    <!--Butão START-->
+    <button id="rect"></button>
+    
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+  <script type="text/javascript" src="js/javascript.js"></script>
+  
+  <script type="text/javascript">
+  
+  //variavel global
+   var a = document.querySelector(".mostra");
+  
+  //função falar
+    function falar(texto){    
+      var text  = new SpeechSynthesisUtterance();
+      text.lang = "pt-BR";
+      text.text = texto;
+    
+      voices = window.speechSynthesis.getVoices();
+      text['voiceURI'] = 'Google português do Brasil'; 
+      text.lang = "pt-BR";
+      text['localService'] = true;
+          
+      speechSynthesis.speak(text);
+   }
+
+
+  //função inner
+  function inner(texto){
+    a.innerHTML = texto;
+  }
+
+
+  //função falar data e hora
+  var ano = new Date().getFullYear();
+  var dia = new Date().getDate();
+  
+  var day = new Date().getMinutes();
+  
+  var hora = new Date().getHours();
+  var minutos = new Date().getMinutes();
+
+  var r = falar('preparando o diaguinóstico do sistema');
+
+  if(1 == 1){
+   setTimeout(() => {
+     falar('hoje é dia ' + dia);
+     inner('hoje é dia ' + dia);
+     console.log('hoje é dia ' + dia);
+   }, 5000);
+  
+   setTimeout(() => {
+      falar(hora + 'horas e' + minutos + 'minutos');
+      inner(hora + 'horas e' + minutos + 'minutos');
+      console.log(hora + 'horas e' + minutos + 'minutos');
+   }, 9000);
+  }else{
+  
+  }
+  </script>
+  
+</body>
+</html>

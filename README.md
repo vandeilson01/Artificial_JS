@@ -1,5 +1,5 @@
 <h1 align="center"> 
- Super Trunfo 🚀 
+ Comando de Voz JS 🚀 
 </h1>
 
 
